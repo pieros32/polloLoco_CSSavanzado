@@ -1,0 +1,127 @@
+.menu-section {
+  padding: 50px 20px;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.menu-header h2 {
+  color: #8a1515;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.menu-header p {
+  color: #666;
+  margin-bottom: 30px;
+  font-size: 0.95rem;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.menu-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+  text-align: left;
+  transition: transform 0.2s ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-3px);
+}
+
+.menu-image-container {
+  position: relative;
+  height: 180px;
+}
+
+.menu-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 12px;
+}
+
+.card-badge:empty {
+  display: none;
+}
+
+.badge-orange {
+  background-color: #d1411e;
+}
+
+.badge-red {
+  background-color: #b31010;
+}
+
+.menu-card-content {
+  padding: 16px;
+}
+
+.menu-card-content h4 {
+  font-size: 1rem;
+  color: #222;
+  font-weight: 500;
+}
+
+input[name="filtro-menu"] {
+  display: none;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background-color: #e8e4dc;
+  border: none;
+  padding: 8px 24px;
+  border-radius: 20px;
+  color: #555;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.filter-btn:hover {
+  background-color: #dbd7cf;
+}
+
+#btn-todos:checked ~ .filters [for="btn-todos"],
+#btn-pollos:checked ~ .filters [for="btn-pollos"],
+#btn-parrillas:checked ~ .filters [for="btn-parrillas"],
+#btn-salchipapas:checked ~ .filters [for="btn-salchipapas"],
+#btn-bebidas:checked ~ .filters [for="btn-bebidas"] {
+  background-color: #8a1515;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(138, 21, 21, 0.25);
+}
+
+#btn-pollos:checked ~ .menu-grid .menu-card:not(.item-pollos),
+#btn-parrillas:checked ~ .menu-grid .menu-card:not(.item-parrillas),
+#btn-salchipapas:checked ~ .menu-grid .menu-card:not(.item-salchipapas),
+#btn-bebidas:checked ~ .menu-grid .menu-card:not(.item-bebidas) {
+  display: none;
+}

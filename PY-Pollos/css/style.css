@@ -1,0 +1,25 @@
+/* ============================================================
+   ARCHIVO MAESTRO — El Pollo Loco & Fuego
+   Importa todos los módulos en el mismo orden en que las reglas
+   aparecían en el CSS original. No se modificó ningún selector,
+   valor ni nombre de clase: solo se reubicaron los bloques.
+============================================================ */
+
+/* Base */
+@import url('base/_reset.css');
+
+/* Layout (estructura general del sitio) */
+@import url('layout/_header.css');
+@import url('layout/_footer.css');
+
+/* Componentes reutilizables */
+@import url('components/_section-header.css');
+@import url('components/_cart-sidebar.css');
+
+/* Secciones (en el orden en que aparecen en el HTML) */
+@import url('sections/_hero.css');
+@import url('sections/_combos.css');
+@import url('sections/_menu.css');
+@import url('sections/_delivery-puntos.css');
+@import url('sections/_opiniones.css');
+@import url('sections/_informacion.css');

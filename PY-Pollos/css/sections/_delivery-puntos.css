@@ -1,0 +1,278 @@
+/* =========================================
+   SECCIÓN DE DELIVERY Y POLLO PUNTOS (100% PURE CSS)
+========================================= */
+.delivery-puntos-section {
+  background-color: #f4f1eb;
+  padding: 60px 20px;
+}
+
+.delivery-puntos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.tarjeta-custom {
+  background-color: #ffffff;
+  border: 1px solid #e0dbd1;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.tarjeta-custom:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.tarjeta-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.tarjeta-header h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #222222;
+  margin-bottom: 4px;
+}
+
+.tarjeta-desc {
+  font-size: 0.9rem;
+  color: #666666;
+  line-height: 1.5;
+}
+
+.icono-rojo {
+  background-color: #ffebe8;
+  color: #8a1515;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icono-rojo .material-symbols-outlined {
+  font-size: 26px;
+}
+
+.icono-amarillo {
+  background-color: #fff8e6;
+  color: #d97706;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icono-amarillo .material-symbols-outlined {
+  font-size: 26px;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 12px;
+}
+
+/* Selector interactivo de Distritos (CSS Puro) */
+.radio-zona {
+  display: none;
+}
+
+.zona-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.zona-chip {
+  padding: 9px 16px;
+  background-color: #f4f1eb;
+  border: 1px solid #d2c8ba;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #555555;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.zona-chip:hover {
+  background-color: #e8e4dc;
+  color: #222222;
+}
+
+#zona-surco:checked ~ .zona-chips [for="zona-surco"],
+#zona-sanborja:checked ~ .zona-chips [for="zona-sanborja"],
+#zona-miraflores:checked ~ .zona-chips [for="zona-miraflores"],
+#zona-sanisidro:checked ~ .zona-chips [for="zona-sanisidro"],
+#zona-lamolina:checked ~ .zona-chips [for="zona-lamolina"] {
+  background-color: #8a1515;
+  color: #ffffff;
+  border-color: #8a1515;
+  box-shadow: 0 3px 8px rgba(138, 21, 21, 0.25);
+}
+
+#zona-otro:checked ~ .zona-chips [for="zona-otro"] {
+  background-color: #842029;
+  color: #ffffff;
+  border-color: #842029;
+  box-shadow: 0 3px 8px rgba(132, 32, 41, 0.25);
+}
+
+/* Resultados dinámicos con CSS */
+.resultado-caja {
+  margin-top: 10px;
+  padding: 15px 18px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.resultado-exito {
+  background-color: #eafaf1;
+  border: 1px solid #a3e9b9;
+  color: #0f5132;
+}
+
+.resultado-error {
+  background-color: #fff0ed;
+  border: 1px solid #f8b4ab;
+  color: #842029;
+}
+
+.resultado-cobertura-ok,
+.resultado-cobertura-no {
+  display: none;
+  animation: fadeInResult 0.25s ease forwards;
+}
+
+#zona-surco:checked ~ .resultado-cobertura-ok,
+#zona-sanborja:checked ~ .resultado-cobertura-ok,
+#zona-miraflores:checked ~ .resultado-cobertura-ok,
+#zona-sanisidro:checked ~ .resultado-cobertura-ok,
+#zona-lamolina:checked ~ .resultado-cobertura-ok {
+  display: block;
+}
+
+#zona-otro:checked ~ .resultado-cobertura-no {
+  display: block;
+}
+
+/* Selector interactivo de Pollo Puntos (CSS Puro) */
+.radio-monto {
+  display: none;
+}
+
+.monto-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.monto-chip {
+  flex: 1;
+  text-align: center;
+  padding: 9px 12px;
+  background-color: #fff8e6;
+  border: 1px solid #f5c76c;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #855b00;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.monto-chip:hover {
+  background-color: #fde047;
+}
+
+#monto-30:checked ~ .monto-chips [for="monto-30"],
+#monto-50:checked ~ .monto-chips [for="monto-50"],
+#monto-85:checked ~ .monto-chips [for="monto-85"],
+#monto-120:checked ~ .monto-chips [for="monto-120"] {
+  background-color: #d97706;
+  color: #ffffff;
+  border-color: #d97706;
+  box-shadow: 0 3px 8px rgba(217, 119, 6, 0.25);
+}
+
+.caja-puntos {
+  background-color: #fff9ed;
+  border: 1.5px dashed #f5c76c;
+  border-radius: 14px;
+  padding: 20px;
+  text-align: center;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: fadeInResult 0.25s ease forwards;
+}
+
+#monto-30:checked ~ .caja-puntos-30,
+#monto-50:checked ~ .caja-puntos-50,
+#monto-85:checked ~ .caja-puntos-85,
+#monto-120:checked ~ .caja-puntos-120 {
+  display: flex;
+}
+
+.puntos-numero {
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: #8a1515;
+  line-height: 1.1;
+  margin-bottom: 2px;
+}
+
+.puntos-label {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #444444;
+  margin-bottom: 12px;
+}
+
+.premio-badge {
+  background-color: #ffeba1;
+  color: #855b00;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 8px 16px;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+@keyframes fadeInResult {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
