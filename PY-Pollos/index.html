@@ -1,0 +1,877 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+  </head>
+
+  <body>
+    <!-- Header con el Navbar -->
+    <header class="header">
+      <div class="header-container">
+        <a class="brand-logo" href="#">El Pollo Loco &amp; Fuego</a>
+
+        <nav class="nav-menu">
+          <a class="nav-link active" href="#heroInicio">Inicio</a>
+          <a class="nav-link" href="#combosContainer">Combos</a>
+          <a class="nav-link" href="#menuSection">Menu</a>
+          <a class="nav-link" href="#cobertura">Delivery</a>
+          <a class="nav-link" href="#informacion">Información</a>
+        </nav>
+
+        <div class="header-actions">
+          <button
+            class="cart-btn"
+            id="cart-toggle"
+            aria-label="Carrito de compras"
+          >
+            <span class="material-symbols-outlined" data-icon="shopping_cart"
+              >shopping_cart</span
+            >
+            <span class="cart-badge" id="cart-badge">0</span>
+          </button>
+          <button class="order-btn">Order Now</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero-section" id="heroInicio">
+        <div class="hero-background">
+          <div class="hero-overlay"></div>
+          <div
+            class="hero-bg-image"
+            style="
+              background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuA75uGXel4ngL7jPIsSl6MjMhdKGvxj0cWoghbsR0v2DtWU9d8PL7iZ-4HFXGfT4sEoVJEGD3Y71PFay5QGAZYlT0-jC_1-mvUoHC3y1sn5LP4vWXVTrhgv8C_t7oy3iTMui_pPOagxVzc8aTSSzJtNhcQonYM9vv5Reqpp5Xjd8wobJnv-ggLz-2CtMf-SI2tWMPvKha5L-28PrXoOfAeCF3euTP6FhUnccs6yf7Gi--oGvPsEN4f2yw&quot;);
+            "
+          ></div>
+        </div>
+
+        <div class="hero-content">
+          <span class="hero-subtitle">Tradición Peruana</span>
+          <h1 class="hero-title">El mejor sabor a leña de la ciudad</h1>
+          <p class="hero-description">
+            Pollo a la brasa jugoso, crujiente y con el toque ahumado perfecto.
+            Acompañado de nuestras papas doradas y salsas caseras.
+          </p>
+          <a class="hero-btn" href="#menu">
+            <span
+              class="material-symbols-outlined"
+              data-icon="local_fire_department"
+              >local_fire_department</span
+            >
+            Pedir Ahora
+          </a>
+        </div>
+      </section>
+      <!-- SECCION DE COMBOS -->
+      <section class="combos-section" id="combosContainer">
+        <div class="combos-header">
+          <h2><span class="icon"></span> Combos Flash del Día</h2>
+          <p>Ofertas exclusivas por tiempo limitado.</p>
+        </div>
+
+        <div class="combos-container">
+          <!-- Tarjeta Combo 1 -->
+          <article class="combo-card">
+            <div class="combo-image">
+              <img
+                src="https://www.donbelisario.com.pe/media/catalog/product/s/e/semana-dorada-promo-familiar.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=400&width=400&canvas=400:400&format=jpeg"
+                alt="Mega Combo Familiar"
+              />
+            </div>
+            <div class="combo-content">
+              <span class="badge badge-yellow">Ahorras S/ 15.00</span>
+              <h3>Mega Combo Familiar</h3>
+              <p class="desc">
+                1 Pollo entero + Papas super grandes + Ensalada + Inka Kola 2L +
+                Tequeños
+              </p>
+              <div class="combo-footer">
+                <div class="prices">
+                  <span class="old-price">S/ 110.00</span>
+                  <span class="new-price">S/ 95.00</span>
+                </div>
+                <button class="btn-add">Agregar</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tarjeta Combo 2 -->
+          <article class="combo-card">
+            <div class="combo-image">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwmEyydCOKZkVdW_Z-OXyEFxGuRR4W5ah_odMP8c6RZ4owYvBYa60R2AEi&s=10"
+                alt="Dúo Parrillero"
+              />
+            </div>
+            <div class="combo-content">
+              <span class="badge badge-yellow">Ahorras S/ 12.00</span>
+              <h3>Dúo Parrillero</h3>
+              <p class="desc">
+                Parrilla Mixta para 2 + Papas + 2 Chichas Moradas grandes
+              </p>
+              <div class="combo-footer">
+                <div class="prices">
+                  <span class="old-price">S/ 70.00</span>
+                  <span class="new-price">S/ 58.00</span>
+                </div>
+                <button class="btn-add">Agregar</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+      <!-- SECCION NUESTRO MENU -->
+      <section class="menu-section" id="menuSection">
+        <div class="menu-header">
+          <h2>Nuestro Menú</h2>
+          <p>
+            Selecciona tus favoritos y disfruta del verdadero sabor peruano en
+            casa.
+          </p>
+        </div>
+
+        <input type="radio" name="filtro-menu" id="btn-todos" checked />
+        <input type="radio" name="filtro-menu" id="btn-pollos" />
+        <input type="radio" name="filtro-menu" id="btn-parrillas" />
+        <input type="radio" name="filtro-menu" id="btn-salchipapas" />
+        <input type="radio" name="filtro-menu" id="btn-bebidas" />
+
+        <div class="filters">
+          <label for="btn-todos" class="filter-btn">Todos</label>
+          <label for="btn-pollos" class="filter-btn">Pollos</label>
+          <label for="btn-parrillas" class="filter-btn">Parrillas</label>
+          <label for="btn-salchipapas" class="filter-btn">Salchipapas</label>
+          <label for="btn-bebidas" class="filter-btn">Bebidas</label>
+        </div>
+
+        <div class="menu-grid">
+          <!-- Tarjeta: Pollo -->
+          <article class="menu-card item-pollos">
+            <div class="menu-image-container">
+              <span class="card-badge badge-orange">Popular</span>
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDSBfQX086k6jDOuY5RgDk7Bcj4nNvVSlhayPksetig885hoUfRCkzImI&s=10"
+                alt="Pollo a la Brasa (Entero)"
+              />
+            </div>
+            <div class="menu-card-content">
+              <h4>Pollo a la Brasa (Entero)</h4>
+              <div class="menu-card-footer">
+                <div class="prices">
+                  <span class="old-price">S/ 69.00</span>
+                  <span class="new-price">S/ 59.00</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tarjeta: Pollo -->
+          <article class="menu-card item-pollos">
+            <div class="menu-image-container">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRCwjeeH9Hp5qZBwRuuwtVxqlyEdidWEv0McsOQQ4YBw2h2y3-BVrn8J0h&s=10"
+                alt="1/4 de Pollo"
+              />
+            </div>
+            <div class="menu-card-content">
+              <h4>Pollo a la Brasa 1/4</h4>
+              <div class="menu-card-footer">
+                <div class="prices">
+                  <span class="old-price">S/ 12.90</span>
+                  <span class="new-price">S/ 11.90</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tarjeta: Parrilla -->
+          <article class="menu-card item-parrillas">
+            <div class="menu-image-container">
+              <img
+                src="https://snapcalorie-webflow-website.s3.us-east-2.amazonaws.com/media/food_pics_v2/medium/mixed_meat_grill.jpg"
+                alt="Parrillada Mixta"
+              />
+            </div>
+            <div class="menu-card-content">
+              <h4>Parrillada Mixta</h4>
+              <div class="menu-card-footer">
+                <div class="prices">
+                  <span class="old-price">S/ 39.90</span>
+                  <span class="new-price">S/ 29.90</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tarjeta: Parrilla -->
+          <article class="menu-card item-parrillas">
+            <div class="menu-image-container">
+              <span class="card-badge badge-red">Picante</span>
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbUaxL-ZBqo2DYq3rARcTUC5DXq34DgxU87dWu8LQOHh7hGWBF_YpLtM4&s=10"
+                alt="Anticuchos Tradicionales"
+              />
+            </div>
+
+            <div class="menu-card-content">
+              <h4>Anticuchos Tradicionales</h4>
+              <div class="menu-card-footer">
+                <div class="prices">
+                  <span class="new-price">S/ 19.90</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tarjeta: Salchipapa -->
+          <article class="menu-card item-salchipapas">
+            <div class="menu-image-container">
+              <span class="card-badge badge-red"></span>
+              <img
+                src="https://tofuu.getjusto.com/orioneat-local/resized2/XeEdyzurRwtRrbvh6-800-x.webp"
+                alt="Salchipapa Clasica"
+              />
+            </div>
+            <div class="menu-card-content">
+              <h4>Salchipapa Clasica</h4>
+              <div class="menu-card-footer">
+                <div class="prices">
+                  <span class="new-price">S/ 9.00</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card item-salchipapas">
+            <div class="menu-image-container">
+              <span class="card-badge badge-red"></span>
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsbhiQ_ep8OnBLfUuTfB_ZqPQsw8rvsMsl4t9BbNwpWg_P3v0MzsDVJ03J&s=10"
+                alt="SalchiBroster"
+              />
+            </div>
+            <div class="menu-card-content">
+              <h4>SalchiBroster</h4>
+              <div class="menu-card-footer">
+                <div class="prices">
+                  <span class="new-price">S/ 11.00</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tarjeta: Bebidas -->
+          <article class="menu-card item-bebidas">
+            <div class="menu-image-container">
+              <span class="card-badge badge-red"></span>
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTd2cTawQMKV3v6m-nnLSL2mJQ0sDI__xF7p96tn9Jc7A&s=10"
+                alt="Chicha Morada"
+              />
+            </div>
+            <div class="menu-card-content">
+              <h4>Chicha Morada 1L</h4>
+              <div class="menu-card-footer">
+                <div class="prices">
+                  <span class="new-price">S/ 7.00</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card item-bebidas">
+            <div class="menu-image-container">
+              <span class="card-badge badge-red"></span>
+              <img
+                src="https://brasaycarbon.pe/wp-content/uploads/2020/12/bebida-limonada-medio-litro.jpg"
+                alt="Limonada Frozen"
+              />
+            </div>
+
+            <div class="menu-card-content">
+              <h4>Limonada Frozen</h4>
+              <div class="menu-card-footer">
+                <div class="prices">
+                  <span class="new-price">S/ 8.00</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card item-bebidas">
+            <div class="menu-image-container">
+              <span class="card-badge badge-red"></span>
+              <img
+                src="https://tofuu.getjusto.com/orioneat-local/resized2/gFvCdWbGefdZCx2tG-2400-x.webp"
+                alt="Inka cola 1.5L|"
+              />
+            </div>
+            <div class="menu-card-content">
+              <h4>Inka cola 1.5L</h4>
+              <div class="menu-card-footer">
+                <div class="prices">
+                  <span class="new-price">S/ 12.00</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- =========================================
+     SECCIÓN DE DELIVERY Y POLLO PUNTOS
+========================================= -->
+      <section class="delivery-puntos-section" id="cobertura">
+        <div class="section-header">
+          <span class="section-subtitle">Servicios y Beneficios</span>
+          <h2>Delivery &amp; Pollo Puntos</h2>
+          <p>
+            Verifica tu zona de reparto en segundos y calcula tus recompensas
+            por orden.
+          </p>
+        </div>
+
+        <div class="delivery-puntos-grid">
+          <!-- Cobertura -->
+          <div class="tarjeta-custom">
+            <div class="tarjeta-header">
+              <div class="icono-rojo">
+                <span class="material-symbols-outlined">location_on</span>
+              </div>
+              <div>
+                <h3>¿Llegamos a tu zona?</h3>
+                <p class="tarjeta-desc">
+                  Selecciona tu distrito para verificar la cobertura inmediata y
+                  tiempo de entrega.
+                </p>
+              </div>
+            </div>
+
+            <div class="cobertura-selector">
+              <span class="form-label">Selecciona tu distrito:</span>
+
+              <input
+                type="radio"
+                name="zona-distrito"
+                id="zona-surco"
+                class="radio-zona"
+                checked
+              />
+              <input
+                type="radio"
+                name="zona-distrito"
+                id="zona-sanborja"
+                class="radio-zona"
+              />
+              <input
+                type="radio"
+                name="zona-distrito"
+                id="zona-miraflores"
+                class="radio-zona"
+              />
+              <input
+                type="radio"
+                name="zona-distrito"
+                id="zona-sanisidro"
+                class="radio-zona"
+              />
+              <input
+                type="radio"
+                name="zona-distrito"
+                id="zona-lamolina"
+                class="radio-zona"
+              />
+              <input
+                type="radio"
+                name="zona-distrito"
+                id="zona-otro"
+                class="radio-zona"
+              />
+
+              <div class="zona-chips">
+                <label for="zona-surco" class="zona-chip">Surco</label>
+                <label for="zona-sanborja" class="zona-chip">San Borja</label>
+                <label for="zona-miraflores" class="zona-chip"
+                  >Miraflores</label
+                >
+                <label for="zona-sanisidro" class="zona-chip">San Isidro</label>
+                <label for="zona-lamolina" class="zona-chip">La Molina</label>
+                <label for="zona-otro" class="zona-chip chip-otro"
+                  >Otro distrito</label
+                >
+              </div>
+
+              <!-- Resultados interactivos con puro CSS -->
+              <div
+                class="resultado-caja resultado-exito resultado-cobertura-ok"
+              >
+                <strong>¡Llegamos a tu zona!</strong> Tiempo estimado de
+                entrega: 25 a 35 minutos. (Delivery S/ 5.00 o Gratis por compras
+                mayores a S/ 50).
+              </div>
+              <div
+                class="resultado-caja resultado-error resultado-cobertura-no"
+              >
+                <strong>Aún no llegamos a esta zona directamente.</strong> Pero
+                puedes pedir para recojo en tienda o consultar por delivery
+                especial.
+              </div>
+            </div>
+          </div>
+
+          <!-- Pollo Puntos -->
+          <div class="tarjeta-custom" id="puntos">
+            <div class="tarjeta-header">
+              <div class="icono-amarillo">
+                <span class="material-symbols-outlined">card_giftcard</span>
+              </div>
+              <div>
+                <h3>Pollo Puntos</h3>
+                <p class="tarjeta-desc">
+                  Calcula cuántos puntos ganarías con tu orden.
+                  <strong>¡1 Sol = 1 Punto!</strong>
+                </p>
+              </div>
+            </div>
+
+            <div class="puntos-selector">
+              <span class="form-label"
+                >Selecciona monto estimado de tu pedido:</span
+              >
+
+              <input
+                type="radio"
+                name="monto-puntos"
+                id="monto-30"
+                class="radio-monto"
+              />
+              <input
+                type="radio"
+                name="monto-puntos"
+                id="monto-50"
+                class="radio-monto"
+              />
+              <input
+                type="radio"
+                name="monto-puntos"
+                id="monto-85"
+                class="radio-monto"
+                checked
+              />
+              <input
+                type="radio"
+                name="monto-puntos"
+                id="monto-120"
+                class="radio-monto"
+              />
+
+              <div class="monto-chips">
+                <label for="monto-30" class="monto-chip">S/ 30</label>
+                <label for="monto-50" class="monto-chip">S/ 50</label>
+                <label for="monto-85" class="monto-chip">S/ 85</label>
+                <label for="monto-120" class="monto-chip">S/ 120</label>
+              </div>
+
+              <!-- Cajas de puntos activadas dinámicamente con CSS -->
+              <div class="caja-puntos caja-puntos-30">
+                <div class="puntos-numero">30</div>
+                <div class="puntos-label">Puntos a Ganar</div>
+                <div class="premio-badge">
+                  ¡Te faltan 10 puntos para Papas Gratis!
+                </div>
+              </div>
+
+              <div class="caja-puntos caja-puntos-50">
+                <div class="puntos-numero">50</div>
+                <div class="puntos-label">Puntos a Ganar</div>
+                <div class="premio-badge">
+                  ¡Ganarías 1 Porción de Papas Gratis!
+                </div>
+              </div>
+
+              <div class="caja-puntos caja-puntos-85">
+                <div class="puntos-numero">85</div>
+                <div class="puntos-label">Puntos a Ganar</div>
+                <div class="premio-badge">
+                  ¡Ganarías 1/4 de Pollo a la Brasa Gratis!
+                </div>
+              </div>
+
+              <div class="caja-puntos caja-puntos-120">
+                <div class="puntos-numero">120</div>
+                <div class="puntos-label">Puntos a Ganar</div>
+                <div class="premio-badge">
+                  ¡Ganarías 1/2 Pollo + Papas Gratis!
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================
+     SECCIÓN DE OPINIONES
+========================================= -->
+      <section id="opiniones" class="opiniones-section">
+        <div class="section-header">
+          <span class="section-subtitle">Testimonios</span>
+          <h2>Lo que dicen nuestros clientes</h2>
+          <p>El sabor que une a familias y amigos.</p>
+        </div>
+
+        <div class="opiniones-grid">
+          <div class="tarjeta-opinion">
+            <div class="opinion-stars">★★★★★</div>
+            <p class="opinion-texto">
+              "Las mejores papas crujientes y el pollo tiene ese toque ahumadito
+              perfecto. El ají de la casa es espectacular, siempre pido extra."
+            </p>
+            <div class="opinion-autor">
+              <div class="avatar">VM</div>
+              <div class="autor-info">
+                <h5>Valeria M.</h5>
+                <small>Cliente Frecuente</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="tarjeta-opinion">
+            <div class="opinion-stars">★★★★★</div>
+            <p class="opinion-texto">
+              "Pedimos el combo familiar para el almuerzo del domingo. Llegó
+              caliente, súper rápido y alcanzó perfecto para los 5. ¡Totalmente
+              recomendado!"
+            </p>
+            <div class="opinion-autor">
+              <div class="avatar">FR</div>
+              <div class="autor-info">
+                <h5>Familia Rojas</h5>
+                <small>Pedido a Domicilio</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Seccion de info -->
+      <section id="informacion" class="informacion-section">
+        <!-- PREGUNTAS FRECUENTES -->
+
+        <div class="informacion-header">
+          <span class="informacion-subtitle"> Preguntas Frecuentes </span>
+
+          <h2>Todo lo que necesitas saber</h2>
+
+          <p>
+            Resolvemos algunas de las preguntas más frecuentes de nuestros
+            clientes.
+          </p>
+        </div>
+
+        <!-- PREGUNTAS -->
+
+        <div class="faq-container">
+          <!-- Pregunta 1 -->
+
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span> ¿Cuánto demora el delivery? </span>
+
+              <span class="material-symbols-outlined faq-icon">
+                expand_more
+              </span>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                Nuestro servicio de delivery demora aproximadamente entre 30 y
+                45 minutos, dependiendo de la zona, el tráfico y la cantidad de
+                pedidos.
+              </p>
+            </div>
+          </article>
+
+          <!-- Pregunta 2 -->
+
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span> ¿Qué medios de pago aceptan? </span>
+
+              <span class="material-symbols-outlined faq-icon">
+                expand_more
+              </span>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                Puedes pagar tu pedido en efectivo, mediante Yape, Plin o
+                utilizando tarjetas de crédito y débito.
+              </p>
+            </div>
+          </article>
+
+          <!-- Pregunta 3 -->
+
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span> ¿Se pueden pedir cremas extra? </span>
+
+              <span class="material-symbols-outlined faq-icon">
+                expand_more
+              </span>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                ¡Claro! Puedes solicitar cremas adicionales al momento de
+                realizar tu pedido.
+              </p>
+            </div>
+          </article>
+
+          <!-- Pregunta 4 -->
+
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span> ¿Realizan pedidos para reuniones o eventos? </span>
+
+              <span class="material-symbols-outlined faq-icon">
+                expand_more
+              </span>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                Sí. Realizamos pedidos para reuniones y eventos. Puedes
+                comunicarte con nosotros con anticipación para coordinar la
+                cantidad y los detalles del pedido.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <!-- UBICACION Y CONTACTO -->
+
+        <div class="informacion-contacto">
+          <!-- UBICACIÓN -->
+
+          <div class="ubicacion-card">
+            <div class="ubicacion-icon">
+              <span class="material-symbols-outlined"> location_on </span>
+            </div>
+
+            <div class="ubicacion-datos">
+              <h3>Visítanos</h3>
+
+              <p>Av. La Encalada 1234</p>
+
+              <p>Santiago de Surco, Lima - Perú</p>
+            </div>
+
+            <div class="horario-card">
+              <div class="horario-header">
+                <span class="material-symbols-outlined"> schedule </span>
+
+                <h4>Horario de Atención</h4>
+              </div>
+
+              <p>Lun - Jue: 12:00 PM - 10:30 PM</p>
+
+              <p>Vie - Dom: 12:00 PM - 11:30 PM</p>
+            </div>
+          </div>
+
+          <!-- CONTACTO -->
+
+          <div class="contacto-card">
+            <span class="contacto-subtitle"> Visítanos o contáctanos </span>
+
+            <h2>Estamos para atenderte</h2>
+
+            <p class="contacto-descripcion">
+              Disfruta de nuestro salón con ambiente rústico moderno o haz tu
+              pedido para disfrutar del mejor sabor en la comodidad de tu hogar.
+            </p>
+
+            <div class="contacto-item">
+              <div class="contacto-icon">
+                <span class="material-symbols-outlined"> call </span>
+              </div>
+
+              <div class="contacto-datos">
+                <span> Central Telefónica </span>
+
+                <a href="tel:+51015554321"> (01) 555-4321 </a>
+              </div>
+            </div>
+
+            <div class="contacto-item">
+              <div class="contacto-icon">
+                <span class="material-symbols-outlined"> mail </span>
+              </div>
+
+              <div class="contacto-datos">
+                <span> Correo </span>
+
+                <a href="mailto:pedidos@pollolocoefuego.pe">
+                  pedidos@pollolocoefuego.pe
+                </a>
+              </div>
+            </div>
+
+            <div class="redes-sociales">
+              <p>Síguenos en redes:</p>
+
+              <div class="redes-links">
+                <a
+                  href="https://facebook.com/tu-usuario"
+                  target="_blank"
+                  aria-label="Facebook"
+                >
+                  <svg
+                    class="social-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 2C6.477 2 2 6.484 2 12.017c0 5.025 3.658 9.128 8.438 9.878v-6.987h-2.54V12.02h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12.02h2.773l-.443 2.886h-2.33v6.989C18.343 21.145 22 17.042 22 12.017 22 6.484 17.522 2 12 2z"
+                    />
+                  </svg>
+                </a>
+
+                <a
+                  href="https://instagram.com/tu-usuario"
+                  target="_blank"
+                  aria-label="Instagram"
+                >
+                  <svg
+                    class="social-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                    />
+                  </svg>
+                </a>
+
+                <a
+                  href="https://tiktok.com/@tu-usuario"
+                  target="_blank"
+                  aria-label="TikTok"
+                >
+                  <svg
+                    class="social-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.242V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.193-4.281V9.553a6.34 6.34 0 0 0-4.57 1.83 6.337 6.337 0 0 0-1.862 4.498 6.337 6.337 0 0 0 1.862 4.498 6.337 6.337 0 0 0 4.498 1.862 6.337 6.337 0 0 0 4.498-1.862 6.337 6.337 0 0 0 1.862-4.498V9.176a8.17 8.17 0 0 0 4.795 1.53V7.261a4.794 4.794 0 0 1-1.025-.575z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Info Marca -->
+        <div class="footer-col">
+          <h3 class="footer-brand">El Pollo Loco &amp; Fuego</h3>
+          <p class="footer-text">
+            El auténtico sabor del pollo a la leña, cocinado con pasión y
+            tradición peruana.
+          </p>
+        </div>
+
+        <!-- Enlaces -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Enlaces Rápidos</h4>
+          <ul class="footer-links">
+            <li><a href="#">Términos del Servicio</a></li>
+            <li><a href="#">Política de Privacidad</a></li>
+            <li><a href="#">Atención al Cliente</a></li>
+            <li><a href="#">Nuestros Locales</a></li>
+            <li><a href="#">Trabaja con Nosotros</a></li>
+          </ul>
+        </div>
+
+        <!-- Info Legal -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Legal</h4>
+          <p class="footer-text">
+            © 2024 El Pollo Loco &amp; Fuego. Sabor Peruano Tradicional.
+          </p>
+          <p class="footer-ruc">RUC: 20123456789</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- fondo oscuro -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+
+    <!-- Carrito Lateral -->
+    <aside class="cart-sidebar" id="cart-sidebar" aria-hidden="true">
+      <div class="cart-header">
+        <div>
+          <h2 class="cart-title">Your Order</h2>
+          <p class="cart-subtitle">
+            <span id="cart-count">0</span> Items in cart
+          </p>
+        </div>
+        <button
+          class="cart-close-btn"
+          id="close-cart"
+          aria-label="Cerrar carrito"
+        >
+          <span class="material-symbols-outlined" data-icon="close">close</span>
+        </button>
+      </div>
+
+      <!-- Lista de Productos -->
+      <div class="cart-items" id="cart-items">
+        <div class="cart-empty">
+          <span
+            class="material-symbols-outlined cart-empty-icon"
+            data-icon="shopping_basket"
+            >shopping_basket</span
+          >
+          <p>Tu carrito está vacío</p>
+        </div>
+      </div>
+
+      <div class="cart-footer">
+        <div class="cart-total-row">
+          <span class="cart-total-label">Total:</span>
+          <span class="cart-total-amount" id="cart-total">S/ 0.00</span>
+        </div>
+        <button class="cart-checkout-btn">Checkout Now</button>
+      </div>
+    </aside>
+
+    <script src="app.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
