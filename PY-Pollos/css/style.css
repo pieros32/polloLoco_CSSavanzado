@@ -23,3 +23,6 @@
 @import url('sections/_delivery-puntos.css');
 @import url('sections/_opiniones.css');
 @import url('sections/_informacion.css');
+@import url('./base/normalize.css');
+@import url('./layout/header.css');
+@import url('./components/buttons.css');
