@@ -1,0 +1,95 @@
+// Footer fijo y compacto (una sola franja siempre visible)
+@use "../abstracts" as *;
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--footer-h);
+  z-index: z(footer);
+  background-color: $color-surface-alt;
+  border-top: 1px solid $color-line-soft;
+
+  // El footer vive solo en la zona de contenido (a la derecha del menú)
+  @include respond-up(lg) {
+    left: $sidebar-width;
+  }
+}
+
+.footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  height: 100%;
+  padding: 0 1rem;
+
+  @include respond-up(md) {
+    padding: 0 1.5rem;
+  }
+}
+
+.footer-info {
+  min-width: 0;
+}
+
+.footer-brand {
+  display: none; // en móvil solo se muestra la línea legal
+  font-size: 1rem;
+  font-weight: 800;
+  color: $color-brand;
+
+  @include respond-up(md) {
+    display: block;
+  }
+}
+
+.footer-text {
+  color: $color-muted;
+  font-size: 0.7rem;
+  line-height: 1.3;
+
+  @include respond-up(md) {
+    font-size: 0.8rem;
+  }
+}
+
+.footer-ruc {
+  display: none;
+  opacity: 0.8;
+
+  @include respond-up(md) {
+    display: inline;
+    margin-left: 0.5rem;
+  }
+}
+
+// Los enlaces solo aparecen cuando hay ancho suficiente
+.footer-links {
+  display: none;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.25rem 1.25rem;
+  max-width: 28rem;
+  list-style: none;
+
+  a {
+    color: $color-muted;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    font-size: 0.85rem;
+    transition:
+      opacity 0.2s ease,
+      color 0.2s ease;
+
+    &:hover {
+      color: $color-accent;
+      opacity: 0.8;
+    }
+  }
+
+  @include respond-up(xl) {
+    display: flex;
+  }
+}

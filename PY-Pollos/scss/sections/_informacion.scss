@@ -1,0 +1,335 @@
+// Página: Información y contacto (FAQ + ubicación + contacto)
+@use "../abstracts" as *;
+
+.informacion-section {
+  @include fill-viewport;
+  background-color: $color-cream;
+  padding: 60px 20px;
+
+  @include respond-down(md) {
+    padding: 50px 20px;
+  }
+
+  @include respond-down(sm) {
+    padding: 40px 15px;
+  }
+}
+
+.informacion-header {
+  @include heading-block;
+
+  @include respond-down(md) {
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+
+  @include respond-down(sm) {
+    margin-bottom: 25px;
+
+    h2 {
+      font-size: 1.35rem;
+    }
+
+    p {
+      font-size: 0.85rem;
+    }
+  }
+}
+
+.informacion-subtitle {
+  @include eyebrow;
+}
+
+// ---------- Preguntas frecuentes (acordeón) ----------
+.faq-container {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto 60px;
+
+  @include respond-down(md) {
+    margin-bottom: 40px;
+  }
+}
+
+.faq-item {
+  background-color: $color-white;
+  border: 1px solid $color-line;
+  border-radius: $radius-card;
+  margin-bottom: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px overlay(0.04);
+  transition:
+    box-shadow 0.25s ease,
+    transform 0.25s ease,
+    border-color 0.25s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    border-color: $color-line-strong;
+    box-shadow: 0 6px 16px overlay(0.07);
+  }
+
+  &.activo {
+    border-color: $color-line-warm;
+    box-shadow: 0 6px 18px rgba($color-primary, 0.08);
+
+    .faq-icon {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  padding: 17px 20px;
+  background-color: $color-white;
+  border: none;
+  color: $gray-850;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+
+  &:hover {
+    background-color: $color-paper;
+  }
+
+  @include respond-down(sm) {
+    padding: 15px;
+    font-size: 0.85rem;
+  }
+}
+
+.faq-icon {
+  color: $color-primary;
+  font-size: 24px;
+  flex-shrink: 0;
+  transition:
+    transform 0.3s ease,
+    color 0.2s ease;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  background-color: $color-white;
+  transition: max-height 0.35s ease;
+
+  p {
+    padding: 0 20px 18px;
+    color: $gray-500;
+    font-size: 0.9rem;
+    line-height: 1.6;
+
+    @include respond-down(sm) {
+      padding: 0 15px 15px;
+      font-size: 0.82rem;
+    }
+  }
+}
+
+// ---------- Ubicación y contacto ----------
+.informacion-contacto {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 30px;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+
+  @include respond-down(md) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.ubicacion-card {
+  text-align: center;
+  @include hover-card;
+
+  @include respond-down(sm) {
+    padding: 22px;
+  }
+}
+
+.ubicacion-icon {
+  margin: 0 auto 15px;
+  @include icon-box(60px, $color-blush, $color-danger-icon, 32px);
+}
+
+.ubicacion-datos {
+  h3 {
+    color: $gray-850;
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+  }
+
+  p {
+    color: $gray-500;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+}
+
+.horario-card {
+  background-color: $color-honey-50;
+  border: 1px solid $color-honey-line;
+  border-radius: $radius-card;
+  padding: 17px;
+  margin-top: 22px;
+  text-align: left;
+
+  p {
+    color: $gray-500;
+    font-size: 0.8rem;
+    line-height: 1.7;
+    padding-left: 29px;
+  }
+}
+
+.horario-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+
+  span {
+    color: $color-amber;
+    font-size: 21px;
+  }
+
+  h4 {
+    color: $gray-800;
+    font-size: 0.9rem;
+  }
+}
+
+.contacto-card {
+  @include hover-card;
+
+  @include respond-down(sm) {
+    padding: 22px;
+  }
+
+  h2 {
+    color: $gray-900;
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+
+    @include respond-down(sm) {
+      font-size: 1.25rem;
+    }
+  }
+}
+
+.contacto-subtitle {
+  display: block;
+  color: $color-primary;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 7px;
+}
+
+.contacto-descripcion {
+  color: $gray-500;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.contacto-item {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 18px;
+
+  &:hover .contacto-icon {
+    background-color: $color-primary;
+    color: $color-white;
+    transform: scale(1.05);
+  }
+}
+
+.contacto-icon {
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+  @include icon-box(42px, $color-blush, $color-danger-icon, 20px);
+}
+
+.contacto-datos {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  span {
+    color: $gray-800;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  a {
+    color: $color-primary;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $color-accent;
+      text-decoration: underline;
+    }
+  }
+}
+
+.redes-sociales {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid $color-line;
+
+  p {
+    color: $gray-750;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+}
+
+.redes-links {
+  display: flex;
+  gap: 10px;
+
+  a {
+    @include flex-center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: $color-cream-dark;
+    color: $gray-600;
+    text-decoration: none;
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease,
+      transform 0.2s ease;
+
+    &:hover {
+      background-color: $color-primary;
+      color: $color-white;
+      transform: translateY(-3px);
+    }
+  }
+
+  .material-symbols-outlined {
+    font-size: 19px;
+  }
+}

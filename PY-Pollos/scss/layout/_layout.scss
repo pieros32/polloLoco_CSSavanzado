@@ -1,0 +1,27 @@
+// ============================================================
+// ESTRUCTURA GENERAL
+//   header (fijo, arriba) · sidebar (fijo, izquierda) · footer (fijo, abajo)
+//   .page-content = zona derecha donde se muestra cada página
+// ============================================================
+@use "../abstracts" as *;
+
+// Alturas expuestas como variables CSS para poder usarlas en calc()
+// y que cambien solas según el tamaño de pantalla.
+:root {
+  --header-h: #{$header-height};
+  --footer-h: #{$footer-height-sm};
+
+  @include respond-up(md) {
+    --footer-h: #{$footer-height};
+  }
+}
+
+.page-content {
+  min-height: 100vh;
+  // Espacio para que el header y el footer fijos no tapen el contenido
+  padding: var(--header-h) 0 var(--footer-h);
+
+  @include respond-up(lg) {
+    margin-left: $sidebar-width; // espacio del menú lateral
+  }
+}

@@ -1,0 +1,143 @@
+// Página: Menú (filtros 100% CSS con inputs radio)
+@use "../abstracts" as *;
+
+// Categorías del filtro. Agregar una nueva = una palabra aquí
+// (+ su radio, label y clase item-xxx en el HTML).
+$menu-categories: pollos, parrillas, salchipapas, bebidas;
+
+.menu-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.menu-header {
+  h2 {
+    color: $color-primary;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: $gray-500;
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+  }
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.menu-card {
+  background: $color-white;
+  border-radius: $radius-card;
+  overflow: hidden;
+  box-shadow: 0 4px 10px overlay(0.03);
+  text-align: left;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+}
+
+.menu-image-container {
+  position: relative;
+  height: 180px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.card-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  color: $color-white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 12px;
+
+  &:empty {
+    display: none;
+  }
+}
+
+.badge-orange {
+  background-color: $color-vermilion;
+}
+
+.badge-red {
+  background-color: $color-crimson;
+}
+
+.menu-card-content {
+  padding: 16px;
+
+  h4 {
+    font-size: 1rem;
+    color: $gray-900;
+    font-weight: 500;
+  }
+}
+
+// ---------- Filtros ----------
+input[name="filtro-menu"] {
+  display: none;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  display: inline-block;
+  background-color: $color-cream-dark;
+  border: none;
+  padding: 8px 24px;
+  border-radius: 20px;
+  color: $gray-600;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: $color-cream-darker;
+  }
+}
+
+// Estado activo del botón (se define una vez y se aplica a cada categoría)
+%filter-btn-active {
+  background-color: $color-primary;
+  color: $color-white;
+  box-shadow: 0 4px 10px rgba($color-primary, 0.25);
+}
+
+#btn-todos:checked ~ .filters [for="btn-todos"] {
+  @extend %filter-btn-active;
+}
+
+@each $cat in $menu-categories {
+  // Botón activo
+  #btn-#{$cat}:checked ~ .filters [for="btn-#{$cat}"] {
+    @extend %filter-btn-active;
+  }
+
+  // Oculta las tarjetas que no son de la categoría elegida
+  #btn-#{$cat}:checked ~ .menu-grid .menu-card:not(.item-#{$cat}) {
+    display: none;
+  }
+}

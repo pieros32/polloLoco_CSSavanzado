@@ -1,0 +1,98 @@
+// Página: Inicio (hero)
+@use "../abstracts" as *;
+
+.hero-section {
+  @include flex-center;
+  position: relative;
+  width: 100%;
+  // Ocupa todo el espacio visible entre header y footer fijos
+  height: calc(100vh - var(--header-h) - var(--footer-h));
+  min-height: 600px;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    overlay(0.8),
+    overlay(0.4),
+    overlay(0.2)
+  );
+  z-index: 10;
+}
+
+.hero-bg-image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.hero-subtitle {
+  color: $color-hero-yellow;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 4px 3px overlay(0.2));
+}
+
+.hero-title {
+  color: $color-white;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 10px 8px overlay(0.3));
+
+  @include respond-up(md) {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+}
+
+.hero-description {
+  color: rgba($color-white, 0.9);
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  margin-bottom: 2rem;
+  max-width: 42rem;
+  filter: drop-shadow(0 4px 3px overlay(0.2));
+}
+
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+  text-decoration: none;
+  box-shadow: 0 10px 15px -3px overlay(0.2);
+  transition: all 0.3s ease;
+  @include pill-button;
+
+  &:hover {
+    box-shadow: 0 20px 25px -5px overlay(0.2);
+    transform: translateY(-0.25rem);
+  }
+}

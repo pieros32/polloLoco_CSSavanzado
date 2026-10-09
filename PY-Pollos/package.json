@@ -1,0 +1,14 @@
+{
+  "name": "pollo-loco-fuego",
+  "version": "2.0.0",
+  "private": true,
+  "description": "El Pollo Loco & Fuego - sitio estático con Sass",
+  "scripts": {
+    "sass:build": "sass --style=expanded scss/main.scss css/main.css",
+    "sass:min": "sass --style=compressed --no-source-map scss/main.scss css/main.min.css",
+    "sass:watch": "sass --watch --style=expanded scss/main.scss css/main.css"
+  },
+  "devDependencies": {
+    "sass": "^1.77.8"
+  }
+}

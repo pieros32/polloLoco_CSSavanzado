@@ -1,0 +1,36 @@
+// ============================================================
+// ARCHIVO MAESTRO — El Pollo Loco & Fuego
+// Compila a: css/main.css
+//
+// Arquitectura (patrón 7-1 simplificado):
+//   abstracts/  variables, funciones y mixins (no generan CSS)
+//   base/       reset y estilos globales
+//   layout/     estructura fija: header, menú lateral, footer
+//   components/ piezas reutilizables
+//   sections/   una hoja por página del sitio
+//
+// Se usa @use (el reemplazo moderno de @import, que Sass deprecó).
+// El orden de carga define el orden de la cascada.
+// ============================================================
+
+// Base
+@use "base/reset";
+
+// Layout
+@use "layout/layout";
+@use "layout/header";
+@use "layout/sidebar";
+@use "layout/footer";
+
+// Componentes
+@use "components/section-header";
+@use "components/prices";
+@use "components/cart-sidebar";
+
+// Secciones / páginas
+@use "sections/hero";
+@use "sections/combos";
+@use "sections/menu";
+@use "sections/delivery-puntos";
+@use "sections/opiniones";
+@use "sections/informacion";

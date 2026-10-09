@@ -1,0 +1,250 @@
+// Página: Delivery y Pollo Puntos (selectores 100% CSS con inputs radio)
+@use "../abstracts" as *;
+
+// Distritos con cobertura y montos de Pollo Puntos
+$zonas-con-cobertura: surco, sanborja, miraflores, sanisidro, lamolina;
+$montos: 30, 50, 85, 120;
+
+.delivery-puntos-section {
+  @include fill-viewport;
+  background-color: $color-cream;
+  padding: 60px 20px;
+}
+
+.delivery-puntos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+
+  @include respond-down(md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tarjeta-custom {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @include hover-card($shadow-hover: 0 8px 20px overlay(0.08));
+}
+
+.tarjeta-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: $gray-900;
+    margin-bottom: 4px;
+  }
+}
+
+.tarjeta-desc {
+  font-size: 0.9rem;
+  color: $gray-500;
+  line-height: 1.5;
+}
+
+.icono-rojo {
+  @include icon-box(48px, $color-blush, $color-primary, 26px);
+}
+
+.icono-amarillo {
+  @include icon-box(48px, $color-honey-100, $color-amber, 26px);
+}
+
+.form-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: $gray-800;
+  margin-bottom: 12px;
+}
+
+// ---------- Selector de distritos ----------
+.radio-zona {
+  display: none;
+}
+
+.zona-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.zona-chip {
+  padding: 9px 16px;
+  background-color: $color-cream;
+  border: 1px solid $color-line-strong;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: $gray-600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+
+  &:hover {
+    background-color: $color-cream-dark;
+    color: $gray-900;
+  }
+}
+
+%zona-chip-active {
+  background-color: $color-primary;
+  color: $color-white;
+  border-color: $color-primary;
+  box-shadow: 0 3px 8px rgba($color-primary, 0.25);
+}
+
+#zona-otro:checked ~ .zona-chips [for="zona-otro"] {
+  background-color: $color-wine;
+  color: $color-white;
+  border-color: $color-wine;
+  box-shadow: 0 3px 8px rgba($color-wine, 0.25);
+}
+
+// ---------- Resultados de cobertura ----------
+.resultado-caja {
+  margin-top: 10px;
+  padding: 15px 18px;
+  border-radius: $radius-card;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.resultado-exito {
+  background-color: $color-success-bg;
+  border: 1px solid $color-success-border;
+  color: $color-success-text;
+}
+
+.resultado-error {
+  background-color: $color-error-bg;
+  border: 1px solid $color-error-border;
+  color: $color-wine;
+}
+
+.resultado-cobertura-ok,
+.resultado-cobertura-no {
+  display: none;
+  animation: fadeInResult 0.25s ease forwards;
+}
+
+@each $zona in $zonas-con-cobertura {
+  #zona-#{$zona}:checked ~ .zona-chips [for="zona-#{$zona}"] {
+    @extend %zona-chip-active;
+  }
+
+  #zona-#{$zona}:checked ~ .resultado-cobertura-ok {
+    display: block;
+  }
+}
+
+#zona-otro:checked ~ .resultado-cobertura-no {
+  display: block;
+}
+
+// ---------- Selector de Pollo Puntos ----------
+.radio-monto {
+  display: none;
+}
+
+.monto-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.monto-chip {
+  flex: 1;
+  text-align: center;
+  padding: 9px 12px;
+  background-color: $color-honey-100;
+  border: 1px solid $color-gold-border;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: $color-butter-text;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+
+  &:hover {
+    background-color: $color-yellow;
+  }
+}
+
+%monto-chip-active {
+  background-color: $color-amber;
+  color: $color-white;
+  border-color: $color-amber;
+  box-shadow: 0 3px 8px rgba($color-amber, 0.25);
+}
+
+.caja-puntos {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: $color-honey-50;
+  border: 1.5px dashed $color-gold-border;
+  border-radius: 14px;
+  padding: 20px;
+  text-align: center;
+  animation: fadeInResult 0.25s ease forwards;
+}
+
+@each $monto in $montos {
+  #monto-#{$monto}:checked ~ .monto-chips [for="monto-#{$monto}"] {
+    @extend %monto-chip-active;
+  }
+
+  #monto-#{$monto}:checked ~ .caja-puntos-#{$monto} {
+    display: flex;
+  }
+}
+
+.puntos-numero {
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: $color-primary;
+  line-height: 1.1;
+  margin-bottom: 2px;
+}
+
+.puntos-label {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: $gray-750;
+  margin-bottom: 12px;
+}
+
+.premio-badge {
+  display: inline-block;
+  background-color: $color-butter;
+  color: $color-butter-text;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 8px 16px;
+  border-radius: 20px;
+}
+
+@keyframes fadeInResult {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

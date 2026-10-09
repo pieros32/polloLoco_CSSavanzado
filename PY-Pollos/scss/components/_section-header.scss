@@ -1,0 +1,10 @@
+// Encabezados reutilizables de sección
+@use "../abstracts" as *;
+
+.section-header {
+  @include heading-block;
+}
+
+.section-subtitle {
+  @include eyebrow;
+}

@@ -1,0 +1,98 @@
+// Menú lateral fijo: contiene ÚNICAMENTE la navegación.
+// ≥ lg  -> siempre visible a la izquierda
+// < lg  -> panel deslizable que se abre con el botón hamburguesa
+@use "../abstracts" as *;
+
+.sidebar {
+  position: fixed;
+  top: $header-height;
+  bottom: 0;
+  left: 0;
+  width: $sidebar-width;
+  z-index: z(sidebar);
+  padding: 1.5rem 0.75rem;
+  background-color: $color-white;
+  border-right: 1px solid $color-line-soft;
+  overflow-y: auto;
+
+  // Cerrado por defecto en pantallas pequeñas
+  transform: translateX(-100%);
+  visibility: hidden;
+  transition:
+    transform 0.3s ease-in-out,
+    visibility 0.3s ease-in-out;
+
+  &.open {
+    transform: translateX(0);
+    visibility: visible;
+    box-shadow: 4px 0 15px overlay(0.15);
+  }
+
+  @include respond-up(lg) {
+    transform: none;
+    visibility: visible;
+    transition: none;
+  }
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: $radius-card;
+  text-decoration: none;
+  color: $color-muted;
+  font-weight: 500;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+
+  .material-symbols-outlined {
+    flex-shrink: 0;
+    width: 1.5rem; // reserva el ancho del icono: si la fuente tarda en cargar, no desborda el menú
+    overflow: hidden;
+    font-size: 1.4rem;
+    white-space: nowrap;
+  }
+
+  &:hover {
+    color: $color-accent;
+    background-color: rgba($color-amber, 0.1);
+  }
+
+  &.active {
+    color: $color-brand;
+    font-weight: 700;
+    background-color: rgba($color-brand, 0.08);
+    box-shadow: inset 4px 0 0 $color-brand;
+  }
+}
+
+// Fondo oscuro detrás del menú abierto (solo < lg)
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: z(nav-overlay);
+  background-color: overlay(0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @include respond-up(lg) {
+    display: none;
+  }
+}

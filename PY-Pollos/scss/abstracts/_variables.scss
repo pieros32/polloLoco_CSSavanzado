@@ -1,0 +1,96 @@
+// ============================================================
+// VARIABLES — El Pollo Loco & Fuego
+// Única fuente de verdad para colores, medidas y capas.
+// Cambiar un valor aquí lo cambia en todo el sitio.
+// ============================================================
+
+// ---------- Colores de marca ----------
+$color-brand: #8f000d; // logo, botones principales, ítem activo
+$color-primary: #8a1515; // títulos de sección, precios, chips activos
+$color-primary-dark: #6a0f0f; // hover del botón "Agregar"
+$color-wine: #842029; // textos/chips de error
+$color-crimson: #b31010; // badge rojo
+$color-vermilion: #d1411e; // badge naranja
+$color-coral: #a62a2a; // borde de las tarjetas de combo
+$color-danger-icon: #dc3545; // iconos de ubicación y contacto
+
+// ---------- Acentos (ámbar / dorado) ----------
+$color-accent: #b45309; // hover general
+$color-amber: #d97706;
+$color-gold: #f59e0b; // estrellas de opiniones
+$color-gold-border: #f5c76c;
+$color-yellow: #fde047;
+$color-hero-yellow: #fef08a;
+
+// ---------- Neutros cálidos (fondos y bordes) ----------
+$color-white: #ffffff;
+$color-ink: #1c1917; // texto principal
+$color-muted: #525252; // texto secundario
+$color-surface-alt: #f5f5f4; // fondo footer / hover suave
+$color-line-soft: #e7e5e4; // bordes suaves
+$color-cream: #f4f1eb; // fondo de secciones
+$color-cream-dark: #e8e4dc;
+$color-cream-darker: #dbd7cf;
+$color-paper: #faf8f4;
+$color-line: #e0dbd1; // borde de tarjetas
+$color-line-strong: #d2c8ba;
+$color-line-warm: #cdbbb0;
+$color-honey-50: #fff9ed;
+$color-honey-100: #fff8e6;
+$color-honey-line: #f1dfb9;
+$color-blush: #ffebe8; // fondo de iconos rojos
+$color-butter: #ffeba1; // fondo de badges amarillos
+$color-butter-text: #855b00;
+
+// ---------- Estados (resultado de cobertura) ----------
+$color-success-bg: #eafaf1;
+$color-success-border: #a3e9b9;
+$color-success-text: #0f5132;
+$color-error-bg: #fff0ed;
+$color-error-border: #f8b4ab;
+
+// ---------- Escala de grises (de oscuro a claro) ----------
+$gray-900: #222222;
+$gray-850: #2c2c2c;
+$gray-800: #333333;
+$gray-750: #444444;
+$gray-700: #4a4a4a;
+$gray-600: #555555;
+$gray-500: #666666;
+$gray-400: #777777;
+$gray-300: #999999;
+
+// ---------- Tipografía ----------
+$font-base:
+  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+// ---------- Radios ----------
+$radius-pill: 9999px;
+$radius-card: 12px;
+$radius-card-lg: 16px;
+
+// ---------- Layout (header / menú lateral / footer fijos) ----------
+$header-height: 4rem;
+$footer-height: 4.5rem; // escritorio y tablet
+$footer-height-sm: 3rem; // móvil
+$sidebar-width: 15rem;
+
+// ---------- Breakpoints ----------
+// sm  = móvil pequeño | md = tablet | lg = menú lateral visible | xl = footer con enlaces
+$breakpoints: (
+  sm: 480px,
+  md: 768px,
+  lg: 992px,
+  xl: 1280px,
+);
+
+// ---------- Capas (z-index) ----------
+// Orden de abajo hacia arriba. Así nunca se "adivinan" valores sueltos.
+$z-layers: (
+  footer: 20,
+  nav-overlay: 28,
+  sidebar: 30,
+  header: 35,
+  cart-overlay: 40,
+  cart: 50,
+);

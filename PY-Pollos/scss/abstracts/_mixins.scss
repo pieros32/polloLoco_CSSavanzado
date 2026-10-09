@@ -1,0 +1,112 @@
+// ============================================================
+// MIXINS — patrones que antes se repetían en el CSS
+// ============================================================
+@use "variables" as *;
+@use "functions" as *;
+
+// ---------- Responsive ----------
+@mixin respond-up($bp) {
+  @media (min-width: breakpoint($bp)) {
+    @content;
+  }
+}
+
+@mixin respond-down($bp) {
+  @media (max-width: breakpoint($bp)) {
+    @content;
+  }
+}
+
+// ---------- Utilidades ----------
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/// Una sección ocupa al menos el alto visible entre header y footer fijos.
+@mixin fill-viewport {
+  min-height: calc(100vh - var(--header-h) - var(--footer-h));
+}
+
+// ---------- Componentes ----------
+
+/// Botón "píldora" de la marca (Order Now, Pedir Ahora, Checkout).
+@mixin pill-button($bg: $color-brand, $hover-bg: $color-accent) {
+  background-color: $bg;
+  color: $color-white;
+  border: none;
+  border-radius: $radius-pill;
+  font-weight: 700;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $hover-bg;
+  }
+}
+
+/// Tarjeta de 16px de radio con elevación al hacer hover.
+@mixin hover-card(
+  $bg: $color-white,
+  $shadow: 0 4px 12px overlay(0.05),
+  $shadow-hover: 0 8px 18px overlay(0.08)
+) {
+  background-color: $bg;
+  border: 1px solid $color-line;
+  border-radius: $radius-card-lg;
+  padding: 30px;
+  box-shadow: $shadow;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: $shadow-hover;
+  }
+}
+
+/// Caja cuadrada con un icono centrado.
+@mixin icon-box($size, $bg, $color, $icon-size) {
+  @include flex-center;
+  width: $size;
+  height: $size;
+  flex-shrink: 0;
+  background-color: $bg;
+  color: $color;
+  border-radius: $radius-card;
+
+  .material-symbols-outlined,
+  span {
+    font-size: $icon-size;
+  }
+}
+
+/// Texto pequeño en mayúsculas sobre los títulos de sección.
+@mixin eyebrow {
+  display: block;
+  color: $color-primary;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 8px;
+}
+
+/// Bloque de encabezado de sección (subtítulo + h2 + párrafo).
+@mixin heading-block {
+  max-width: 800px;
+  margin: 0 auto 35px;
+  text-align: center;
+
+  h2 {
+    color: $gray-900;
+    font-size: 1.7rem;
+    margin-bottom: 8px;
+  }
+
+  p {
+    color: $gray-500;
+    font-size: 0.95rem;
+  }
+}

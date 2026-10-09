@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Inicio | El Pollo Loco &amp; Fuego</title>
+    <title>Opiniones | El Pollo Loco &amp; Fuego</title>
     <link rel="stylesheet" href="css/main.css" />
     <link
       rel="stylesheet"
@@ -54,7 +54,7 @@
     <!-- Menú lateral fijo: SOLO navegación -->
     <aside class="sidebar" id="sidebar">
       <nav class="sidebar-nav" aria-label="Navegación principal">
-        <a class="nav-link active" href="index.html" aria-current="page">
+        <a class="nav-link" href="index.html">
           <span class="material-symbols-outlined">home</span>
           Inicio
         </a>
@@ -70,7 +70,7 @@
           <span class="material-symbols-outlined">delivery_dining</span>
           Delivery
         </a>
-        <a class="nav-link" href="opiniones.html">
+        <a class="nav-link active" href="opiniones.html" aria-current="page">
           <span class="material-symbols-outlined">reviews</span>
           Opiniones
         </a>
@@ -83,33 +83,47 @@
 
     <!-- Aquí se muestra la página seleccionada -->
     <main class="page-content">
-      <!-- Hero Section -->
-      <section class="hero-section" id="heroInicio">
-        <div class="hero-background">
-          <div class="hero-overlay"></div>
-          <div
-            class="hero-bg-image"
-            style="
-              background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuA75uGXel4ngL7jPIsSl6MjMhdKGvxj0cWoghbsR0v2DtWU9d8PL7iZ-4HFXGfT4sEoVJEGD3Y71PFay5QGAZYlT0-jC_1-mvUoHC3y1sn5LP4vWXVTrhgv8C_t7oy3iTMui_pPOagxVzc8aTSSzJtNhcQonYM9vv5Reqpp5Xjd8wobJnv-ggLz-2CtMf-SI2tWMPvKha5L-28PrXoOfAeCF3euTP6FhUnccs6yf7Gi--oGvPsEN4f2yw&quot;);
-            "
-          ></div>
+      <!-- =========================================
+     SECCIÓN DE OPINIONES
+========================================= -->
+      <section id="opiniones" class="opiniones-section">
+        <div class="section-header">
+          <span class="section-subtitle">Testimonios</span>
+          <h2>Lo que dicen nuestros clientes</h2>
+          <p>El sabor que une a familias y amigos.</p>
         </div>
 
-        <div class="hero-content">
-          <span class="hero-subtitle">Tradición Peruana</span>
-          <h1 class="hero-title">El mejor sabor a leña de la ciudad</h1>
-          <p class="hero-description">
-            Pollo a la brasa jugoso, crujiente y con el toque ahumado perfecto.
-            Acompañado de nuestras papas doradas y salsas caseras.
-          </p>
-          <a class="hero-btn" href="menu.html">
-            <span
-              class="material-symbols-outlined"
-              data-icon="local_fire_department"
-              >local_fire_department</span
-            >
-            Pedir Ahora
-          </a>
+        <div class="opiniones-grid">
+          <div class="tarjeta-opinion">
+            <div class="opinion-stars">★★★★★</div>
+            <p class="opinion-texto">
+              "Las mejores papas crujientes y el pollo tiene ese toque ahumadito
+              perfecto. El ají de la casa es espectacular, siempre pido extra."
+            </p>
+            <div class="opinion-autor">
+              <div class="avatar">VM</div>
+              <div class="autor-info">
+                <h5>Valeria M.</h5>
+                <small>Cliente Frecuente</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="tarjeta-opinion">
+            <div class="opinion-stars">★★★★★</div>
+            <p class="opinion-texto">
+              "Pedimos el combo familiar para el almuerzo del domingo. Llegó
+              caliente, súper rápido y alcanzó perfecto para los 5. ¡Totalmente
+              recomendado!"
+            </p>
+            <div class="opinion-autor">
+              <div class="avatar">FR</div>
+              <div class="autor-info">
+                <h5>Familia Rojas</h5>
+                <small>Pedido a Domicilio</small>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>

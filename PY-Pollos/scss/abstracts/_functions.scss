@@ -1,0 +1,26 @@
+// ============================================================
+// FUNCIONES
+// ============================================================
+@use "sass:map";
+@use "variables" as *;
+
+/// Valor de un breakpoint por nombre: breakpoint(md) -> 768px
+@function breakpoint($name) {
+  @if not map.has-key($breakpoints, $name) {
+    @error "Breakpoint desconocido: `#{$name}`. Usa: #{map.keys($breakpoints)}";
+  }
+  @return map.get($breakpoints, $name);
+}
+
+/// z-index por nombre de capa: z(header) -> 35
+@function z($layer) {
+  @if not map.has-key($z-layers, $layer) {
+    @error "Capa desconocida: `#{$layer}`. Usa: #{map.keys($z-layers)}";
+  }
+  @return map.get($z-layers, $layer);
+}
+
+/// Negro con transparencia (sombras y fondos oscuros): overlay(.5)
+@function overlay($alpha) {
+  @return rgba(#000000, $alpha);
+}

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Inicio | El Pollo Loco &amp; Fuego</title>
+    <title>Combos | El Pollo Loco &amp; Fuego</title>
     <link rel="stylesheet" href="css/main.css" />
     <link
       rel="stylesheet"
@@ -54,11 +54,11 @@
     <!-- Menú lateral fijo: SOLO navegación -->
     <aside class="sidebar" id="sidebar">
       <nav class="sidebar-nav" aria-label="Navegación principal">
-        <a class="nav-link active" href="index.html" aria-current="page">
+        <a class="nav-link" href="index.html">
           <span class="material-symbols-outlined">home</span>
           Inicio
         </a>
-        <a class="nav-link" href="combos.html">
+        <a class="nav-link active" href="combos.html" aria-current="page">
           <span class="material-symbols-outlined">local_offer</span>
           Combos
         </a>
@@ -83,33 +83,62 @@
 
     <!-- Aquí se muestra la página seleccionada -->
     <main class="page-content">
-      <!-- Hero Section -->
-      <section class="hero-section" id="heroInicio">
-        <div class="hero-background">
-          <div class="hero-overlay"></div>
-          <div
-            class="hero-bg-image"
-            style="
-              background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuA75uGXel4ngL7jPIsSl6MjMhdKGvxj0cWoghbsR0v2DtWU9d8PL7iZ-4HFXGfT4sEoVJEGD3Y71PFay5QGAZYlT0-jC_1-mvUoHC3y1sn5LP4vWXVTrhgv8C_t7oy3iTMui_pPOagxVzc8aTSSzJtNhcQonYM9vv5Reqpp5Xjd8wobJnv-ggLz-2CtMf-SI2tWMPvKha5L-28PrXoOfAeCF3euTP6FhUnccs6yf7Gi--oGvPsEN4f2yw&quot;);
-            "
-          ></div>
+      <!-- SECCION DE COMBOS -->
+      <section class="combos-section" id="combosContainer">
+        <div class="combos-header">
+          <h2><span class="icon"></span> Combos Flash del Día</h2>
+          <p>Ofertas exclusivas por tiempo limitado.</p>
         </div>
 
-        <div class="hero-content">
-          <span class="hero-subtitle">Tradición Peruana</span>
-          <h1 class="hero-title">El mejor sabor a leña de la ciudad</h1>
-          <p class="hero-description">
-            Pollo a la brasa jugoso, crujiente y con el toque ahumado perfecto.
-            Acompañado de nuestras papas doradas y salsas caseras.
-          </p>
-          <a class="hero-btn" href="menu.html">
-            <span
-              class="material-symbols-outlined"
-              data-icon="local_fire_department"
-              >local_fire_department</span
-            >
-            Pedir Ahora
-          </a>
+        <div class="combos-container">
+          <!-- Tarjeta Combo 1 -->
+          <article class="combo-card">
+            <div class="combo-image">
+              <img
+                src="https://www.donbelisario.com.pe/media/catalog/product/s/e/semana-dorada-promo-familiar.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=400&width=400&canvas=400:400&format=jpeg"
+                alt="Mega Combo Familiar"
+              />
+            </div>
+            <div class="combo-content">
+              <span class="badge badge-yellow">Ahorras S/ 15.00</span>
+              <h3>Mega Combo Familiar</h3>
+              <p class="desc">
+                1 Pollo entero + Papas super grandes + Ensalada + Inka Kola 2L +
+                Tequeños
+              </p>
+              <div class="combo-footer">
+                <div class="prices">
+                  <span class="old-price">S/ 110.00</span>
+                  <span class="new-price">S/ 95.00</span>
+                </div>
+                <button class="btn-add">Agregar</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tarjeta Combo 2 -->
+          <article class="combo-card">
+            <div class="combo-image">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwmEyydCOKZkVdW_Z-OXyEFxGuRR4W5ah_odMP8c6RZ4owYvBYa60R2AEi&s=10"
+                alt="Dúo Parrillero"
+              />
+            </div>
+            <div class="combo-content">
+              <span class="badge badge-yellow">Ahorras S/ 12.00</span>
+              <h3>Dúo Parrillero</h3>
+              <p class="desc">
+                Parrilla Mixta para 2 + Papas + 2 Chichas Moradas grandes
+              </p>
+              <div class="combo-footer">
+                <div class="prices">
+                  <span class="old-price">S/ 70.00</span>
+                  <span class="new-price">S/ 58.00</span>
+                </div>
+                <button class="btn-add">Agregar</button>
+              </div>
+            </div>
+          </article>
         </div>
       </section>
     </main>

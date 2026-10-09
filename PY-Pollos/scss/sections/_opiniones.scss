@@ -1,0 +1,80 @@
+// Página: Opiniones
+@use "../abstracts" as *;
+
+.opiniones-section {
+  padding: 60px 20px;
+  background-color: $color-white;
+}
+
+.opiniones-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+
+  @include respond-down(md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tarjeta-opinion {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @include hover-card(
+    $bg: $color-paper,
+    $shadow: 0 4px 12px overlay(0.04),
+    $shadow-hover: 0 8px 18px overlay(0.07)
+  );
+}
+
+.opinion-stars {
+  color: $color-gold;
+  font-size: 1.25rem;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+}
+
+.opinion-texto {
+  font-style: italic;
+  color: $gray-700;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+.opinion-autor {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-top: 1px solid $color-line;
+  padding-top: 18px;
+}
+
+.avatar {
+  @include flex-center;
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  background: linear-gradient(135deg, $color-primary, $color-accent);
+  color: $color-white;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border-radius: 50%;
+}
+
+.autor-info {
+  h5 {
+    color: $gray-900;
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 2px;
+  }
+
+  small {
+    color: $gray-400;
+    font-size: 0.8rem;
+  }
+}

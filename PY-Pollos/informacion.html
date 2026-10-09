@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Información | El Pollo Loco &amp; Fuego</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+  </head>
+
+  <body>
+    <!-- Header fijo: solo logo + acciones -->
+    <header class="header">
+      <div class="header-container">
+        <div class="header-start">
+          <button
+            class="nav-toggle"
+            id="nav-toggle"
+            type="button"
+            aria-label="Abrir menú de navegación"
+            aria-controls="sidebar"
+            aria-expanded="false"
+          >
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+          </button>
+
+          <a class="brand-logo" href="index.html">El Pollo Loco &amp; Fuego</a>
+        </div>
+
+        <div class="header-actions">
+          <button
+            class="cart-btn"
+            id="cart-toggle"
+            aria-label="Carrito de compras"
+          >
+            <span class="material-symbols-outlined" data-icon="shopping_cart"
+              >shopping_cart</span
+            >
+            <span class="cart-badge" id="cart-badge">0</span>
+          </button>
+          <button class="order-btn">Order Now</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Fondo oscuro del menú lateral (solo móvil/tablet) -->
+    <div class="nav-overlay" id="nav-overlay"></div>
+
+    <!-- Menú lateral fijo: SOLO navegación -->
+    <aside class="sidebar" id="sidebar">
+      <nav class="sidebar-nav" aria-label="Navegación principal">
+        <a class="nav-link" href="index.html">
+          <span class="material-symbols-outlined">home</span>
+          Inicio
+        </a>
+        <a class="nav-link" href="combos.html">
+          <span class="material-symbols-outlined">local_offer</span>
+          Combos
+        </a>
+        <a class="nav-link" href="menu.html">
+          <span class="material-symbols-outlined">restaurant_menu</span>
+          Menú
+        </a>
+        <a class="nav-link" href="delivery.html">
+          <span class="material-symbols-outlined">delivery_dining</span>
+          Delivery
+        </a>
+        <a class="nav-link" href="opiniones.html">
+          <span class="material-symbols-outlined">reviews</span>
+          Opiniones
+        </a>
+        <a class="nav-link active" href="informacion.html" aria-current="page">
+          <span class="material-symbols-outlined">info</span>
+          Información
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Aquí se muestra la página seleccionada -->
+    <main class="page-content">
+      <!-- Seccion de info -->
+      <section id="informacion" class="informacion-section">
+        <!-- PREGUNTAS FRECUENTES -->
+
+        <div class="informacion-header">
+          <span class="informacion-subtitle"> Preguntas Frecuentes </span>
+
+          <h2>Todo lo que necesitas saber</h2>
+
+          <p>
+            Resolvemos algunas de las preguntas más frecuentes de nuestros
+            clientes.
+          </p>
+        </div>
+
+        <!-- PREGUNTAS -->
+
+        <div class="faq-container">
+          <!-- Pregunta 1 -->
+
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span> ¿Cuánto demora el delivery? </span>
+
+              <span class="material-symbols-outlined faq-icon">
+                expand_more
+              </span>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                Nuestro servicio de delivery demora aproximadamente entre 30 y
+                45 minutos, dependiendo de la zona, el tráfico y la cantidad de
+                pedidos.
+              </p>
+            </div>
+          </article>
+
+          <!-- Pregunta 2 -->
+
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span> ¿Qué medios de pago aceptan? </span>
+
+              <span class="material-symbols-outlined faq-icon">
+                expand_more
+              </span>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                Puedes pagar tu pedido en efectivo, mediante Yape, Plin o
+                utilizando tarjetas de crédito y débito.
+              </p>
+            </div>
+          </article>
+
+          <!-- Pregunta 3 -->
+
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span> ¿Se pueden pedir cremas extra? </span>
+
+              <span class="material-symbols-outlined faq-icon">
+                expand_more
+              </span>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                ¡Claro! Puedes solicitar cremas adicionales al momento de
+                realizar tu pedido.
+              </p>
+            </div>
+          </article>
+
+          <!-- Pregunta 4 -->
+
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span> ¿Realizan pedidos para reuniones o eventos? </span>
+
+              <span class="material-symbols-outlined faq-icon">
+                expand_more
+              </span>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                Sí. Realizamos pedidos para reuniones y eventos. Puedes
+                comunicarte con nosotros con anticipación para coordinar la
+                cantidad y los detalles del pedido.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <!-- UBICACION Y CONTACTO -->
+
+        <div class="informacion-contacto">
+          <!-- UBICACIÓN -->
+
+          <div class="ubicacion-card">
+            <div class="ubicacion-icon">
+              <span class="material-symbols-outlined"> location_on </span>
+            </div>
+
+            <div class="ubicacion-datos">
+              <h3>Visítanos</h3>
+
+              <p>Av. La Encalada 1234</p>
+
+              <p>Santiago de Surco, Lima - Perú</p>
+            </div>
+
+            <div class="horario-card">
+              <div class="horario-header">
+                <span class="material-symbols-outlined"> schedule </span>
+
+                <h4>Horario de Atención</h4>
+              </div>
+
+              <p>Lun - Jue: 12:00 PM - 10:30 PM</p>
+
+              <p>Vie - Dom: 12:00 PM - 11:30 PM</p>
+            </div>
+          </div>
+
+          <!-- CONTACTO -->
+
+          <div class="contacto-card">
+            <span class="contacto-subtitle"> Visítanos o contáctanos </span>
+
+            <h2>Estamos para atenderte</h2>
+
+            <p class="contacto-descripcion">
+              Disfruta de nuestro salón con ambiente rústico moderno o haz tu
+              pedido para disfrutar del mejor sabor en la comodidad de tu hogar.
+            </p>
+
+            <div class="contacto-item">
+              <div class="contacto-icon">
+                <span class="material-symbols-outlined"> call </span>
+              </div>
+
+              <div class="contacto-datos">
+                <span> Central Telefónica </span>
+
+                <a href="tel:+51015554321"> (01) 555-4321 </a>
+              </div>
+            </div>
+
+            <div class="contacto-item">
+              <div class="contacto-icon">
+                <span class="material-symbols-outlined"> mail </span>
+              </div>
+
+              <div class="contacto-datos">
+                <span> Correo </span>
+
+                <a href="mailto:pedidos@pollolocoefuego.pe">
+                  pedidos@pollolocoefuego.pe
+                </a>
+              </div>
+            </div>
+
+            <div class="redes-sociales">
+              <p>Síguenos en redes:</p>
+
+              <div class="redes-links">
+                <a
+                  href="https://facebook.com/tu-usuario"
+                  target="_blank"
+                  aria-label="Facebook"
+                >
+                  <svg
+                    class="social-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 2C6.477 2 2 6.484 2 12.017c0 5.025 3.658 9.128 8.438 9.878v-6.987h-2.54V12.02h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12.02h2.773l-.443 2.886h-2.33v6.989C18.343 21.145 22 17.042 22 12.017 22 6.484 17.522 2 12 2z"
+                    />
+                  </svg>
+                </a>
+
+                <a
+                  href="https://instagram.com/tu-usuario"
+                  target="_blank"
+                  aria-label="Instagram"
+                >
+                  <svg
+                    class="social-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                    />
+                  </svg>
+                </a>
+
+                <a
+                  href="https://tiktok.com/@tu-usuario"
+                  target="_blank"
+                  aria-label="TikTok"
+                >
+                  <svg
+                    class="social-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.242V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.193-4.281V9.553a6.34 6.34 0 0 0-4.57 1.83 6.337 6.337 0 0 0-1.862 4.498 6.337 6.337 0 0 0 1.862 4.498 6.337 6.337 0 0 0 4.498 1.862 6.337 6.337 0 0 0 4.498-1.862 6.337 6.337 0 0 0 1.862-4.498V9.176a8.17 8.17 0 0 0 4.795 1.53V7.261a4.794 4.794 0 0 1-1.025-.575z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer fijo -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-info">
+          <h3 class="footer-brand">El Pollo Loco &amp; Fuego</h3>
+          <p class="footer-text">
+            © 2024 El Pollo Loco &amp; Fuego. Sabor Peruano Tradicional.
+            <span class="footer-ruc">RUC: 20123456789</span>
+          </p>
+        </div>
+
+        <ul class="footer-links">
+          <li><a href="#">Términos del Servicio</a></li>
+          <li><a href="#">Política de Privacidad</a></li>
+          <li><a href="#">Atención al Cliente</a></li>
+          <li><a href="#">Nuestros Locales</a></li>
+          <li><a href="#">Trabaja con Nosotros</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- fondo oscuro del carrito -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+
+    <!-- Carrito Lateral -->
+    <aside class="cart-sidebar" id="cart-sidebar" aria-hidden="true">
+      <div class="cart-header">
+        <div>
+          <h2 class="cart-title">Your Order</h2>
+          <p class="cart-subtitle">
+            <span id="cart-count">0</span> Items in cart
+          </p>
+        </div>
+        <button
+          class="cart-close-btn"
+          id="close-cart"
+          aria-label="Cerrar carrito"
+        >
+          <span class="material-symbols-outlined" data-icon="close">close</span>
+        </button>
+      </div>
+
+      <!-- Lista de Productos -->
+      <div class="cart-items" id="cart-items">
+        <div class="cart-empty">
+          <span
+            class="material-symbols-outlined cart-empty-icon"
+            data-icon="shopping_basket"
+            >shopping_basket</span
+          >
+          <p>Tu carrito está vacío</p>
+        </div>
+      </div>
+
+      <div class="cart-footer">
+        <div class="cart-total-row">
+          <span class="cart-total-label">Total:</span>
+          <span class="cart-total-amount" id="cart-total">S/ 0.00</span>
+        </div>
+        <button class="cart-checkout-btn">Checkout Now</button>
+      </div>
+    </aside>
+
+    <script src="app.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

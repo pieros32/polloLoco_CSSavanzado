@@ -1,0 +1,108 @@
+// Página: Combos
+@use "../abstracts" as *;
+
+.combos-section {
+  @include fill-viewport;
+  background-color: $color-cream;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.combos-header {
+  h2 {
+    @include flex-center;
+    gap: 8px;
+    color: $color-primary;
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+  }
+
+  p {
+    color: $gray-600;
+    font-size: 0.95rem;
+    margin-bottom: 35px;
+  }
+}
+
+.combos-container {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+// Tarjetas de combos
+.combo-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  max-width: 480px;
+  padding: 20px;
+  background: $color-white;
+  border-radius: $radius-card;
+  border-left: 5px solid $color-coral;
+  box-shadow: 0 4px 15px overlay(0.04);
+  text-align: left;
+}
+
+.combo-image img {
+  width: 140px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.combo-content {
+  flex: 1;
+
+  h3 {
+    font-size: 1.05rem;
+    margin-bottom: 6px;
+    color: $gray-850;
+  }
+
+  .desc {
+    font-size: 0.8rem;
+    color: $gray-400;
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+}
+
+.badge-yellow {
+  display: inline-block;
+  background-color: $color-butter;
+  color: $color-butter-text;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.combo-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-add {
+  background-color: $color-primary;
+  color: $color-white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: background 0.2s;
+
+  &:hover {
+    background-color: $color-primary-dark;
+  }
+}
